@@ -2,8 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "inter", sans-serif;
   color: #fff;
 }
+
+/* Header styles */
 nav {
   height: 56px;
   background: #1c181d;
@@ -102,12 +105,14 @@ nav {
   width: 28px;
   height: 28px;
   padding: auto;
+  font-size: 13.5px;
+  transition: 0.2s ease;
 }
 .auth-user > .user:hover {
   background-color: #616161;
 }
 .user > span:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Nav media queries */
