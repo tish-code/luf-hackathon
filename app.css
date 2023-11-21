@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+nav {
+  height: 56px;
+  background: #1c181d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  gap: 8px;
+}
+.big-logo {
+  margin: 0 0 0 5px;
+}
+.small-logo {
+  display: none;
+}
+.search {
+  position: relative;
+}
+.search-input {
+  width: 480px;
+  outline: none;
+  background-color: #303030;
+  border-radius: 8px;
+  height: 32px;
+  padding: 8px 8px 8px 30px;
+  margin-left: auto;
+  border: 1px solid #616161;
+  font-size: 13px;
+  line-height: 18.2px;
+  transition: 0.2s ease;
+}
+.search-input::placeholder {
+  color: #b5b5b5;
+  font-size: 13px;
+  line-height: 18.2px;
+}
+.search-input:hover {
+  border: 1px solid #e1e1e1;
+}
+.search-input:focus {
+  border: 2px solid #e1e1e1;
+}
+
+.search-icon {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 4px;
+  top: 3px;
+  transform: translateY(50%) translateX(50%);
+  stroke: #b5b5b5;
+}
+.auth-user {
+  flex: flex-end;
+  /* width: 464px; */
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.auth-user > .notification {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #303030;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.auth-user > .notification:hover {
+  background-color: #616161;
+}
+
+.auth-user > .user {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #303030;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.user > p {
+  font-size: 12px;
+  line-height: 15.6px;
+  padding: 2px 8px 2px 8px;
+}
+.user > span {
+  background-color: #36fba1;
+  margin: 0 2px 0 0;
+  border-radius: 6px;
+  color: rgb(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: auto;
+}
+.auth-user > .user:hover {
+  background-color: #616161;
+}
+.user > span:hover {
+  opacity: 0.8;
+}
+
+/* Nav media queries */
+@media (max-width: 785px) {
+  .search-input {
+    width: 238px;
+  }
+  .auth-user > .user {
+    background: none;
+  }
+  .auth-user > .user:hover {
+    background: none;
+  }
+  .auth-user > .user > p {
+    display: none;
+  }
+  .big-logo {
+    display: none;
+  }
+  .small-logo {
+    display: flex;
+    height: 32px;
+    width: 32px;
+    margin: 0 0 12px 0;
+  }
+}
