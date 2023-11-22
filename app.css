@@ -2,7 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "inter", sans-serif;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
   color: #fff;
 }
 
@@ -32,7 +33,6 @@ nav {
   border-radius: 8px;
   height: 32px;
   padding: 8px 8px 8px 30px;
-  margin-left: auto;
   border: 1px solid #616161;
   font-size: 13px;
   line-height: 18.2px;
@@ -63,7 +63,7 @@ nav {
   flex: flex-end;
   /* width: 464px; */
   display: flex;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
 }
 
@@ -71,6 +71,7 @@ nav {
   width: 32px;
   height: 32px;
   border-radius: 8px;
+  /* margin: 0 4px 0 0; */
   padding: 8px;
   background-color: #303030;
   transition: 0.2s ease;
@@ -88,6 +89,7 @@ nav {
   background-color: #303030;
   transition: 0.2s ease;
   cursor: pointer;
+  /* margin: 0 0 0 4px; */
 }
 .user > p {
   font-size: 12px;
@@ -116,7 +118,7 @@ nav {
 }
 
 /* Nav media queries */
-@media (max-width: 785px) {
+@media screen and (max-width: 785px) {
   .search-input {
     width: 238px;
   }
@@ -136,6 +138,25 @@ nav {
     display: flex;
     height: 32px;
     width: 32px;
-    margin: 0 0 12px 0;
+    margin: 0 0 11.5px 0;
   }
+}
+@media screen and (min-width: 250px) and (max-width: 370px) {
+  .search-input {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 300px) {
+  .search-input {
+    width: 140px;
+  }
+}
+/* Main body Styles */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 800px;
+  min-height: 178px;
+  margin: 88px auto 0 auto;
 }
