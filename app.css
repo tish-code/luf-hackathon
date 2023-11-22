@@ -60,6 +60,7 @@ nav {
   stroke: #b5b5b5;
 }
 .auth-user {
+  position: relative;
   flex: flex-end;
   /* width: 464px; */
   display: flex;
@@ -118,9 +119,72 @@ nav {
 }
 
 /*  modals */
-.user-modal {
-  /* display: none; */
+.alerts-modal {
+  position: absolute;
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  width: 383px;
+  top: 64px;
+  right: 45px;
+  transform: translateY(-10%) translateX(10%);
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #dbdbdb;
+  gap: 16px;
+}
+.alerts-modal > .alerts-header {
   display: flex;
+  justify-content: space-between;
+}
+.alerts-header > p {
+  font-weight: 600;
+  font-size: 14px;
+}
+.alerts-header-icons {
+  display: flex;
+  gap: 16px;
+}
+.alerts-header-icons > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.alerts-header-icons > svg > path {
+  fill: #303030;
+}
+.alerts-modal > .alerts-list {
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  font-size: 13px;
+  color: #616161;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 430px) {
+  .alerts-modal {
+    right: 40px;
+    width: 358px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 385px) {
+  .alerts-modal {
+    right: 35px;
+    width: 320px;
+  }
+}
+@media screen and (min-width: 270px) and (max-width: 360px) {
+  .alerts-modal {
+    right: 25px;
+    width: 270px;
+  }
+}
+
+.user-modal {
+  display: none;
+  /* display: flex; */
+  gap: 4px;
   flex-direction: column;
   position: absolute;
   width: 320px;
@@ -173,9 +237,11 @@ nav {
   cursor: pointer;
 }
 .all-stores > svg {
-  stroke: #303030;
   height: 15px;
   width: 15px;
+}
+.all-stores > svg > path {
+  fill: #303030;
 }
 .all-stores > p {
   font-size: 13px;
