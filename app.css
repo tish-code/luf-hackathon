@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -82,6 +82,7 @@ nav {
 }
 
 .auth-user > .user {
+  position: relative;
   display: flex;
   align-items: center;
   height: 32px;
@@ -97,6 +98,7 @@ nav {
   padding: 2px 8px 2px 8px;
 }
 .user > span {
+  z-index: 1;
   background-color: #36fba1;
   margin: 0 2px 0 0;
   border-radius: 6px;
@@ -113,10 +115,105 @@ nav {
 .auth-user > .user:hover {
   background-color: #616161;
 }
-.user > span:hover {
-  opacity: 0.9;
+
+/*  modals */
+.user-modal {
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 320px;
+  height: 384px;
+  top: 105px;
+  right: 335px;
+  border-radius: 14px;
+  padding: 6px 0 6px 0;
+  border: 1px solid #dbdbdb;
+  transform: translateY(-10%) translateX(100%);
+}
+.user-modal > .modal-top {
+  /* height: 72px; */
+  display: flex;
+  flex-direction: column;
+  padding: 0 6px 0 6px;
+  gap: 4px;
 }
 
+.modal-top > .store-name {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px 4px 8px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  gap: 8px;
+}
+.store-name > span {
+  background-color: #36fba1;
+  margin: 0 2px 0 0;
+  border-radius: 6px;
+  color: rgb(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: auto;
+  font-size: 13.5px;
+  transition: 0.2s ease;
+}
+.store-name > p {
+  color: #303030;
+  font-size: 13px;
+}
+.modal-top > .all-stores {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 8px;
+  gap: 8px;
+  cursor: pointer;
+}
+.all-stores > svg {
+  stroke: #303030;
+  height: 15px;
+  width: 15px;
+}
+.all-stores > p {
+  font-size: 13px;
+  color: #303030;
+  font-weight: 500;
+}
+.user-modal > .line {
+  height: 1px;
+  background-color: #e1e1e1;
+}
+.user-modal > .modal-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 6px 0 6px;
+}
+.modal-middle > p {
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 13px;
+  color: #303030;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.user-modal > .modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 6px 0 6px;
+}
+.modal-footer > .owner {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 8px;
+}
 /* Nav media queries */
 @media screen and (max-width: 785px) {
   .search-input {
