@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   font-weight: 600;
-  color: #fff;
+  color: #303030;
 }
 
 /* Header styles */
@@ -96,6 +96,7 @@ nav {
   font-size: 12px;
   line-height: 15.6px;
   padding: 2px 8px 2px 8px;
+  color: #f1f1f1;
 }
 .user > span {
   z-index: 1;
@@ -123,7 +124,6 @@ nav {
   flex-direction: column;
   position: absolute;
   width: 320px;
-  height: 384px;
   top: 105px;
   right: 335px;
   border-radius: 14px;
@@ -162,7 +162,6 @@ nav {
   transition: 0.2s ease;
 }
 .store-name > p {
-  color: #303030;
   font-size: 13px;
 }
 .modal-top > .all-stores {
@@ -180,7 +179,6 @@ nav {
 }
 .all-stores > p {
   font-size: 13px;
-  color: #303030;
   font-weight: 500;
 }
 .user-modal > .line {
@@ -197,7 +195,6 @@ nav {
   border-radius: 8px;
   padding: 6px;
   font-size: 13px;
-  color: #303030;
   font-weight: 500;
   cursor: pointer;
 }
@@ -213,6 +210,22 @@ nav {
   flex-direction: column;
   border-radius: 8px;
   padding: 8px;
+}
+.owner > .name {
+  font-size: 13px;
+  font-weight: 500;
+}
+.owner > .email {
+  font-size: 12px;
+  font-weight: 400;
+  color: #616161;
+}
+.modal-footer > p {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 /* Nav media queries */
 @media screen and (max-width: 785px) {
