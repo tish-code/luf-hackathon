@@ -36,7 +36,7 @@ nav {
   border: 1px solid #616161;
   font-size: 13px;
   line-height: 18.2px;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   color: #f1f1f1;
   font-weight: 500;
 }
@@ -75,7 +75,7 @@ nav {
   border-radius: 8px;
   padding: 8px;
   background-color: #303030;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   cursor: pointer;
 }
 .auth-user > .notification:hover {
@@ -89,7 +89,7 @@ nav {
   height: 32px;
   border-radius: 8px;
   background-color: #303030;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   cursor: pointer;
   /* margin: 0 0 0 4px; */
 }
@@ -112,7 +112,7 @@ nav {
   height: 28px;
   padding: auto;
   font-size: 13.5px;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
 }
 .auth-user > .user:hover {
   background-color: #616161;
@@ -138,7 +138,7 @@ nav {
   border-radius: 14px;
   border: 1px solid #dbdbdb;
   gap: 16px;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
   background-color: #fff;
 }
 .alerts-modal > .alerts-header {
@@ -235,7 +235,7 @@ nav {
   height: 28px;
   padding: auto;
   font-size: 13.5px;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
 }
 .store-name > p {
   font-size: 13px;
@@ -247,6 +247,7 @@ nav {
   border-radius: 8px;
   gap: 8px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 .all-stores > svg {
   height: 15px;
@@ -258,6 +259,9 @@ nav {
 .all-stores > p {
   font-size: 13px;
   font-weight: 500;
+}
+.all-stores:hover {
+  background-color: #f1f1f1;
 }
 .user-modal > .line {
   height: 1px;
@@ -276,6 +280,9 @@ nav {
   font-weight: 500;
   cursor: pointer;
 }
+.modal-middle > p:hover {
+  background-color: #f1f1f1;
+}
 
 .user-modal > .modal-footer {
   display: flex;
@@ -288,6 +295,10 @@ nav {
   flex-direction: column;
   border-radius: 8px;
   padding: 8px;
+  cursor: pointer;
+}
+.modal-footer > .owner:hover {
+  background-color: #f1f1f1;
 }
 .owner > .name {
   font-size: 13px;
@@ -306,11 +317,14 @@ nav {
   cursor: pointer;
 }
 
+.modal-footer > p:hover {
+  background-color: #f1f1f1;
+}
 /* Main body Styles */
 main {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 16px;
   width: 800px;
   min-height: 178px;
   margin: 88px auto 0 auto;
@@ -335,6 +349,8 @@ main > .subscription {
 
 .subscription > .actions {
   display: flex;
+  gap: 8px;
+  align-items: center;
 }
 .actions > button {
   padding: 6px 12px 6px 12px;
@@ -344,7 +360,69 @@ main > .subscription {
   color: #323232;
   cursor: pointer;
 }
-
+/* .actions > svg {
+  border-radius: 6px;
+  padding: 6px;
+}
+.actions > svg > path {
+  width: 10.5px;
+  height: 10.5px;
+  fill: #e3e3e3;
+  color: #e3e3e3;
+} */
+main > .setup-guide {
+  display: flex;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  padding: 16px;
+  gap: 16px;
+  border-radius: 18px;
+  background: #ffffff;
+}
+.setup-guide > .setup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.setup > .setup-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.setup-head > .top {
+  font-size: 14px;
+  font-weight: 600;
+}
+.setup-head > .p {
+  font-weight: 400;
+  font-size: 13px;
+}
+.setup > .progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.progress > p {
+  font-size: 12px;
+  font-weight: 400;
+}
+.progress > .progress-bars {
+  display: flex;
+  height: 4px;
+  border-radius: 28px;
+  background-color: #e3e3e3;
+}
+.progress-bars > .bars {
+  width: 18px;
+}
+.progress-bars > #first {
+  background-color: #1a1a1a;
+}
+.setup-guide > .setup-guide-closed-icon {
+  margin: 0 0 0 auto;
+  padding: 4px;
+  border-radius: 6px;
+}
 /* media queries */
 @media screen and (max-width: 810px) {
   .search-input {
@@ -403,5 +481,8 @@ main > .subscription {
     flex-direction: column;
     align-items: start;
     gap: 16px;
+  }
+  main > .setup-guide {
+    border-radius: 0;
   }
 }
