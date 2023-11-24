@@ -13,8 +13,10 @@ function toggleUserModal() {
 function toggleAlertModal() {
   if (alertModal.style.display === "" || alertModal.style.display === "none") {
     alertModal.style.display = "block";
+    // notificationIcon.style.background = "#616161";
   } else {
     alertModal.style.display = "none";
+    // notificationIcon.style.background = "#303030";
   }
 }
 
@@ -26,6 +28,7 @@ alertModal.addEventListener("click", (e) => {
   if (e.target === e.currentTarget) {
     if (alertModal.style.display === "block") {
       alertModal.style.display = "none";
+      // notificationIcon.style.background = "#303030";
     }
   }
 });
