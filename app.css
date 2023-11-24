@@ -37,6 +37,8 @@ nav {
   font-size: 13px;
   line-height: 18.2px;
   transition: 0.2s ease;
+  color: #f1f1f1;
+  font-weight: 500;
 }
 .search-input::placeholder {
   color: #b5b5b5;
@@ -62,7 +64,6 @@ nav {
 .auth-user {
   position: relative;
   flex: flex-end;
-  /* width: 464px; */
   display: flex;
   gap: 6px;
   align-items: center;
@@ -72,7 +73,6 @@ nav {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  /* margin: 0 4px 0 0; */
   padding: 8px;
   background-color: #303030;
   transition: 0.2s ease;
@@ -119,19 +119,26 @@ nav {
 }
 
 /*  modals */
-.alerts-modal {
-  position: absolute;
-  /* display: flex; */
+.alerts-overlay {
   display: none;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.alerts-modal {
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 383px;
-  top: 64px;
-  right: 45px;
-  transform: translateY(-10%) translateX(10%);
+  margin: 64px 10px 0 auto;
   padding: 16px;
   border-radius: 14px;
   border: 1px solid #dbdbdb;
   gap: 16px;
+  transition: 0.5s ease-in;
 }
 .alerts-modal > .alerts-header {
   display: flex;
@@ -180,23 +187,26 @@ nav {
     width: 270px;
   }
 }
-
-.user-modal {
+.user-modal-overlay {
   display: none;
-  /* display: flex; */
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.user-modal {
+  display: flex;
   gap: 4px;
   flex-direction: column;
-  position: absolute;
   width: 320px;
-  top: 105px;
-  right: 335px;
+  margin: 64px 10px 0 auto;
   border-radius: 14px;
   padding: 6px 0 6px 0;
   border: 1px solid #dbdbdb;
-  transform: translateY(-10%) translateX(100%);
 }
 .user-modal > .modal-top {
-  /* height: 72px; */
   display: flex;
   flex-direction: column;
   padding: 0 6px 0 6px;
@@ -294,9 +304,10 @@ nav {
   cursor: pointer;
 }
 /* Nav media queries */
-@media screen and (max-width: 785px) {
+@media screen and (max-width: 810px) {
   .search-input {
-    width: 238px;
+    /* width: 238px; */
+    width: 400px;
   }
   .auth-user > .user {
     background: none;
@@ -317,12 +328,17 @@ nav {
     margin: 0 0 11.5px 0;
   }
 }
+@media screen and (min-width: 350px) and (max-width: 700px) {
+  .search-input {
+    width: 245px;
+  }
+}
 @media screen and (min-width: 250px) and (max-width: 370px) {
   .search-input {
     width: 200px;
   }
 }
-@media screen and (min-width: 250px) and (max-width: 300px) {
+@media screen and (min-width: 150px) and (max-width: 300px) {
   .search-input {
     width: 140px;
   }
