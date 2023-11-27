@@ -331,7 +331,7 @@ main {
   width: 800px;
   min-height: 178px;
   margin: 88px auto 0 auto;
-  transition: 0.3s ease;
+  transition: margin-bottom 0.5s ease;
 }
 
 main > .subscription {
@@ -342,6 +342,10 @@ main > .subscription {
   padding: 12px 8px 12px 16px;
   border-radius: 8px;
   background-color: #1a1a1a;
+  transition: opacity 0.3s ease;
+}
+main > .hidden {
+  opacity: 0;
 }
 .subscription > .subscription-message {
   display: flex;
@@ -385,9 +389,9 @@ main > .setup-section {
   border: 1px solid #dbdbdb;
   border-radius: 18px;
   background: #ffffff;
-  gap: 16px;
   padding: 8px;
   width: 100%;
+  transition: 0.5s ease;
 }
 .setup-section > .setup-guide-top {
   display: flex;
@@ -436,24 +440,179 @@ main > .setup-section {
 }
 
 .setup-guide-top > .setup-guide-opened-icon {
+  display: none;
   margin: 0 0 0 auto;
   padding: 4px;
   border-radius: 6px;
   width: 28px;
   height: 28px;
+  cursor: pointer;
+  transition: fadeIn 2s ease;
 }
+
 .setup-guide-opened-icon > path {
+  fill: #4a4a4a;
+}
+.setup-guide-top > .setup-guide-closed-icon {
+  margin: 0 0 0 auto;
+  padding: 4px;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.setup-guide-closed-icon > path {
   fill: #4a4a4a;
 }
 
 .setup-section > .setup-guide-prompts {
   display: flex;
   flex-direction: column;
+  height: 0px;
+  overflow: hidden;
+  /* transition: height 2.5s ease; */
+}
+.setup-section > .setup-opened {
+  height: 100%;
+  /* margin-top: 16px; */
 }
 .setup-guide-prompts > .prompt {
-  background-color: #f3f3f3;
   padding: 8px 8px 12px 8px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.prompt > .prompt-title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.prompt-title > svg {
+  height: 24px;
+}
+.prompt-title > svg > circle {
+  stroke: #8a8a8a;
+}
+.prompt-title > p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #303030;
+}
+
+.prompt > .prompt-body {
+  position: relative;
+  display: flex;
+  padding-left: 46px;
+}
+.prompt-body > .prompt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.prompt-actions > .prompt-explain > p {
+  align-self: flex-start;
+  font-size: 13px;
+  color: #616161;
+  font-weight: 500;
+  padding-right: 150px;
+}
+.prompt-actions > .prompt-explain > p > #prompt-learn-more {
+  color: #005bd3;
+  cursor: pointer;
+}
+.prompt-actions > .prompt-explain > p > #prompt-learn-more:hover {
+  opacity: 0.8;
+}
+.prompt-actions > button {
+  align-self: flex-start;
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #404040;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+.prompt-actions > button:hover {
+  background-color: #2a2a2a;
+}
+.prompt-body > img {
+  display: none;
+  position: absolute;
+  width: 154.14px;
+  height: 120px;
+  right: 153px;
+  transform: translateY(-32%) translateX(100%);
+}
+
+#prompt2 > .prompt-body > .prompt-actions > .buttons {
+  display: flex;
+  gap: 16px;
+}
+#prompt2 > .prompt-body > .prompt-actions > .buttons > .add-btn {
+  align-self: flex-start;
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #404040;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+#prompt2 > .prompt-body > .prompt-actions > .buttons > .add-btn:hover {
+  background-color: #2a2a2a;
+}
+#prompt2 > .prompt-body > .prompt-actions > .buttons > .import-btn {
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #323232;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color: inherit;
+}
+#prompt2 > .prompt-body > .prompt-actions > .buttons > .import-btn:hover {
+  background-color: #e7e7e7;
+}
+/* Javascript Styling */
+.active {
+  background: #f3f3f3;
+  gap: 16px;
+}
+.active > .prompt-title > p {
+  font-weight: 600;
+}
+.active > .prompt-body > .prompt-actions {
+  height: 5rem;
+}
+.active > #prompt-body1 > .prompt-actions {
+  height: 5rem;
+}
+.active > #prompt-body2 > .prompt-actions {
+  height: 4rem;
+}
+.active > .prompt-body > img {
+  display: block;
 }
 /* media queries */
 @media screen and (max-width: 810px) {
@@ -482,6 +641,12 @@ main > .setup-section {
   main {
     width: 680px;
   }
+  .active > #prompt-body2 > .prompt-actions {
+    height: 5rem;
+  }
+  .active > #prompt-body5 > .prompt-actions {
+    height: 5.9rem;
+  }
 }
 @media screen and (min-width: 350px) and (max-width: 700px) {
   .search-input {
@@ -499,6 +664,12 @@ main > .setup-section {
     display: flex;
   }
   .wide-screen-sub-alert-close-icon {
+    display: none;
+  }
+  .prompt-actions > .prompt-explain > p {
+    padding-right: 20px;
+  }
+  .active > .prompt-body > img {
     display: none;
   }
 }
@@ -533,5 +704,27 @@ main > .setup-section {
   }
   .wide-screen-sub-alert-close-icon {
     display: none;
+  }
+  .prompt-actions > .prompt-explain > p {
+    padding-right: 10px;
+  }
+  .active > .prompt-body > img {
+    display: none;
+  }
+
+  .active > #prompt-body1 > .prompt-actions {
+    height: 5.7rem;
+  }
+  .active > #prompt-body2 > .prompt-actions {
+    height: 5.85rem;
+  }
+  .active > #prompt-body3 > .prompt-actions {
+    height: 7.5rem;
+  }
+  .active > #prompt-body4 > .prompt-actions {
+    height: 6.7rem;
+  }
+  .active > #prompt-body5 > .prompt-actions {
+    height: 7.7rem;
   }
 }
